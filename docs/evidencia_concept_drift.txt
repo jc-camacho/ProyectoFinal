@@ -1,0 +1,28 @@
+﻿
+=== Escenario sin_drift (baseline f1=0.6996) ===
+ batch     f1  positive_rate_pred
+     1 0.6684              0.1878
+     2 0.6734              0.1867
+     3 0.7255              0.2178
+     4 0.7125              0.2044
+     5 0.6790              0.1989
+     6 0.7008              0.1922
+     7 0.6975              0.2144
+     8 0.6813              0.2233
+     9 0.7350              0.1956
+    10 0.7246              0.2033
+ALARMA de reentrenamiento en el lote: None
+
+=== Escenario con_drift (baseline f1=0.6996) ===
+ batch     f1  positive_rate_pred
+     1 0.6684              0.1878
+     2 0.6734              0.1867
+     3 0.7255              0.2178
+     4 0.7125              0.2044
+     5 0.6790              0.1989
+     6 0.6200              0.1922
+     7 0.5480              0.2144
+     8 0.5316              0.2233
+     9 0.4439              0.1956
+    10 0.3300              0.2033
+ALARMA de reentrenamiento en el lote: 7

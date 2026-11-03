@@ -1,0 +1,36 @@
+﻿
+=== LOTE NORMAL (mismo origen) -> VERDE (OK) ===
+      variable test  statistic  p_value threshold  drift
+           age   KS     0.0222   0.3013  p<0.0002  False
+        fnlwgt   KS     0.0467   0.0005  p<0.0002  False
+ education-num   KS     0.0202   0.4137  p<0.0002  False
+  capital-gain   KS     0.0082   0.9995  p<0.0002  False
+  capital-loss   KS     0.0067   1.0000  p<0.0002  False
+hours-per-week   KS     0.0171   0.6328  p<0.0002  False
+     workclass  PSI     0.0017      NaN      >0.2  False
+     education  PSI     0.0199      NaN      >0.2  False
+marital-status  PSI     0.0046      NaN      >0.2  False
+    occupation  PSI     0.0056      NaN      >0.2  False
+  relationship  PSI     0.0024      NaN      >0.2  False
+          race  PSI     0.0005      NaN      >0.2  False
+           sex  PSI     0.0000      NaN      >0.2  False
+native-country  PSI     0.0186      NaN      >0.2  False
+
+=== LOTE CON DRIFT INYECTADO -> ROJO (DRIFT) ===
+      variable test  statistic  p_value threshold  drift
+           age   KS     0.3628   0.0000  p<0.0002   True
+        fnlwgt   KS     0.0467   0.0005  p<0.0002  False
+ education-num   KS     0.0202   0.4137  p<0.0002  False
+  capital-gain   KS     0.0082   0.9995  p<0.0002  False
+  capital-loss   KS     0.0067   1.0000  p<0.0002  False
+hours-per-week   KS     0.5769   0.0000  p<0.0002   True
+     workclass  PSI     1.1999      NaN      >0.2   True
+     education  PSI     0.0199      NaN      >0.2  False
+marital-status  PSI     0.0046      NaN      >0.2  False
+    occupation  PSI     1.0633      NaN      >0.2   True
+  relationship  PSI     0.0024      NaN      >0.2  False
+          race  PSI     0.0005      NaN      >0.2  False
+           sex  PSI     0.0000      NaN      >0.2  False
+native-country  PSI     0.0186      NaN      >0.2  False
+
+Tasa de falsas alarmas en 500 lotes normales: 0.0%

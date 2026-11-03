@@ -1,0 +1,123 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-8.3.3, pluggy-1.7.0 -- C:\Users\josec\miniconda3\envs\mlops\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\josec\Downloads\ProyectoFinal
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collecting ... collected 20 items
+
+tests/test_concept_drift.py::test_alarma_requiere_caida_sostenida PASSED [  5%]
+tests/test_concept_drift.py::test_sin_caida_no_hay_alarma PASSED         [ 10%]
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma PASSED [ 15%]
+tests/test_concept_drift.py::test_integracion_con_concept_drift_alarma PASSED [ 20%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[0] PASSED [ 25%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[1] PASSED [ 30%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[2] PASSED [ 35%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[3] PASSED [ 40%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[4] PASSED [ 45%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[5] PASSED [ 50%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[6] PASSED [ 55%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[7] PASSED [ 60%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[8] PASSED [ 65%]
+tests/test_data_drift.py::test_verde_con_datos_del_mismo_origen[9] PASSED [ 70%]
+tests/test_data_drift.py::test_rojo_con_datos_derivados[0] PASSED        [ 75%]
+tests/test_data_drift.py::test_rojo_con_datos_derivados[1] PASSED        [ 80%]
+tests/test_data_drift.py::test_rojo_con_datos_derivados[2] PASSED        [ 85%]
+tests/test_data_drift.py::test_rojo_con_datos_derivados[3] PASSED        [ 90%]
+tests/test_data_drift.py::test_rojo_con_datos_derivados[4] PASSED        [ 95%]
+tests/test_data_drift.py::test_psi_identico_es_cero PASSED               [100%]
+
+============================== warnings summary ===============================
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:64
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+    parse = parser.parseString(pattern)
+
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+    parser.resetCache()
+
+..\..\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_mathtext.py:45
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\matplotlib\_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+    ParserElement.enablePackrat()
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:64: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("togetherai_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:78: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("cohere_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:86: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("ai21labs_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:95: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("mosaicml_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:125: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("openai_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:182: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("anthropic_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:190: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("palm_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:230: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("mistral_api_key", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:284: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("provider", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:311: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("config", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:351: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("name")
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:361: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("model", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:372: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @root_validator(skip_on_failure=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:394: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("route_type", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:400: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    @validator("limit", pre=True)
+
+tests/test_concept_drift.py::test_integracion_sin_drift_no_alarma
+  C:\Users\josec\miniconda3\envs\mlops\Lib\site-packages\mlflow\gateway\config.py:450: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    class Route(ConfigModel):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 20 passed, 30 warnings in 4.41s =======================
