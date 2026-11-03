@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adult-income-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: adult-income-api
+  template:
+    metadata:
+      labels:
+        app: adult-income-api
+    spec:
+      # Resuelve el MLflow que corre en el host (IPv4 de host.docker.internal)
+      hostAliases:
+        - ip: "192.168.65.254"
+          hostnames: ["host.docker.internal"]
+      containers:
+        - name: api
+          image: adult-income-api:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MLFLOW_TRACKING_URI
+              value: "http://host.docker.internal:5000"
+            - name: MODEL_NAME
+              value: "adult-income-classifier"
+            - name: MODEL_ALIAS
+              value: "champion"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "1Gi"

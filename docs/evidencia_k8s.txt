@@ -1,0 +1,70 @@
+﻿EVIDENCIA KUBERNETES - 11/03/2026 16:57:18
+
+### 1. Replicas Running
+NAME                                READY   STATUS    RESTARTS   AGE   IP           NODE                    NOMINATED NODE   READINESS GATES
+adult-income-api-7d8897c8b4-bnfqw   1/1     Running   0          17s   10.244.0.6   desktop-control-plane   <none>           <none>
+adult-income-api-7d8897c8b4-r9cxq   1/1     Running   0          17s   10.244.0.5   desktop-control-plane   <none>           <none>
+adult-income-api-7d8897c8b4-vm4dg   1/1     Running   0          17s   10.244.0.7   desktop-control-plane   <none>           <none>
+
+### 2. Balanceo: 12 peticiones sucesivas al Service (NodePort 30080)
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-r9cxq"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-r9cxq"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-bnfqw"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-vm4dg"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-bnfqw"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-bnfqw"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-vm4dg"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-r9cxq"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-r9cxq"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-vm4dg"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-vm4dg"}
+{"status":"ok","pod":"adult-income-api-7d8897c8b4-vm4dg"}
+
+Pods distintos atendiendo:
+adult-income-api-7d8897c8b4-r9cxq: 4
+adult-income-api-7d8897c8b4-bnfqw: 3
+adult-income-api-7d8897c8b4-vm4dg: 5
+
+### 3. Autorreparacion: se elimina pod/adult-income-api-7d8897c8b4-bnfqw mientras se envian peticiones
+pod "adult-income-api-7d8897c8b4-bnfqw" deleted from default namespace
+
+NAME                                READY   STATUS    RESTARTS   AGE
+adult-income-api-7d8897c8b4-r9cxq   1/1     Running   0          30s
+adult-income-api-7d8897c8b4-vm4dg   1/1     Running   0          30s
+adult-income-api-7d8897c8b4-zrmj2   0/1     Running   0          3s
+
+Pods tras la recuperacion:
+NAME                                READY   STATUS    RESTARTS   AGE
+adult-income-api-7d8897c8b4-r9cxq   1/1     Running   0          48s
+adult-income-api-7d8897c8b4-vm4dg   1/1     Running   0          48s
+adult-income-api-7d8897c8b4-zrmj2   1/1     Running   0          21s
+
+Codigos HTTP de las 25 peticiones durante la prueba:
+
+### 4. Escalado 3 -> 5 -> 2
+deployment.apps/adult-income-api scaled
+
+NAME                                READY   STATUS    RESTARTS   AGE
+adult-income-api-7d8897c8b4-5dwln   1/1     Running   0          11s
+adult-income-api-7d8897c8b4-mwf7z   1/1     Running   0          11s
+adult-income-api-7d8897c8b4-r9cxq   1/1     Running   0          59s
+adult-income-api-7d8897c8b4-vm4dg   1/1     Running   0          59s
+adult-income-api-7d8897c8b4-zrmj2   1/1     Running   0          32s
+
+deployment.apps/adult-income-api scaled
+
+NAME                                READY   STATUS    RESTARTS   AGE
+adult-income-api-7d8897c8b4-r9cxq   1/1     Running   0          67s
+adult-income-api-7d8897c8b4-vm4dg   1/1     Running   0          67s
+
+deployment.apps/adult-income-api scaled
+
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+adult-income-api   3/3     3            3           78s
+
+
+### 3b. Disponibilidad durante la autorreparacion
+Se elimino pod/adult-income-api-7d8897c8b4-r9cxq en la peticion ~6 de 25.
+Codigos HTTP (25 peticiones): 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200
+Peticiones fallidas: 0
+
