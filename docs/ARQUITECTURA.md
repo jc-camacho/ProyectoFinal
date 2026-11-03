@@ -2,15 +2,15 @@
 
 ## 1. Reparto de trabajo
 
-> **COMPLETAR**: una fila por integrante. Debe coincidir con el historial de commits.
+Trabajo individual: todos los componentes fueron construidos por **Jose Carlos Camacho**.
 
 | Componente | Integrante |
 |---|---|
-| Entrenamiento y MLflow (`train/`) | _nombre_ |
-| Servicio y Docker (`serving/`) | _nombre_ |
-| Kubernetes (`k8s/`) | _nombre_ |
-| Drift y tests (`drift/`, `tests/`) | _nombre_ |
-| Documentación / UI (`docs/`, `ui/`) | _nombre_ |
+| Entrenamiento y MLflow (`train/`) | Jose Carlos Camacho |
+| Servicio y Docker (`serving/`) | Jose Carlos Camacho |
+| Kubernetes (`k8s/`) | Jose Carlos Camacho |
+| Drift y tests (`drift/`, `tests/`) | Jose Carlos Camacho |
+| Documentación y UI (`docs/`, `ui/`) | Jose Carlos Camacho |
 
 ## 2. Problema y datos
 
@@ -92,7 +92,13 @@ Clúster local (Docker Desktop). `k8s/deployment.yaml` (3 réplicas) y `k8s/serv
 ### 7.3 Tests automatizados
 `pytest -v` → 20 tests: verde con 10 lotes normales, rojo con 5 lotes derivados, y lógica de alarma de concept drift (unitaria e integración contra el modelo del registry; esta última se omite si MLflow está apagado). Evidencia: `docs/evidencia_pytest.txt`.
 
-## 8. Cómo reproducir
+## 8. Puntos extra: UI (`ui/app.py`)
+
+Aplicación Streamlit que consume la API **desplegada en Kubernetes**, no un proceso local: `kubectl port-forward svc/adult-income-api 8080:8000` y `streamlit run ui/app.py`. Muestra la versión del modelo y el run (`GET /info`), y por cada predicción (`POST /predict`) el pod que respondió. Verificado con la prueba automática de Streamlit (`AppTest`) contra el clúster: modelo v2, predicción devuelta, pod identificado.
+
+Limitación: `port-forward` a un Service fija un único pod, por lo que desde la UI no se aprecia el balanceo; este se demostró por separado (sección 6) llamando al NodePort desde dentro del nodo.
+
+## 9. Cómo reproducir
 
 ```powershell
 conda activate mlops
